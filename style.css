@@ -1,0 +1,188 @@
+/* Works on Firefox */
+* {
+    scrollbar-width: 4px;
+    scrollbar-color: black ghostwhite;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 4px;
+
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: ghostwhite;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 2px;
+}
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+    margin: 0;
+    display: flex;
+    display: grid;
+    grid-template-columns: 300px 1fr auto;
+    user-select: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 50px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
+
+.board {
+    display: grid;
+    gap: 20px;
+}
+
+.board__cell {
+    box-shadow: -2px -2px 5px 0 rgb(255, 128, 0), inset -2px -2px 5px 0 rgb(255, 51, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 24px sans-serif;
+    transition: 0.3s;
+}
+
+.board__cell:active {
+    box-shadow: 2px 2px 5px 0 rgb(0, 166, 255), inset 2px 2px 5px 0 rgb(3, 111, 252);
+}
+
+.stats {
+    height: 100vh;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 #0008;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    gap: 14px;
+}
+
+.stats h3 {
+    margin: 0;
+}
+
+.stats-box {
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.control {
+    display: grid;
+    gap: 14px;
+    align-content: flex-start;
+    padding: 30px;
+    gap: 20px;
+}
+
+.reset {
+    box-shadow: -2px -2px 5px 0 rgb(255, 128, 0), inset -2px -2px 5px 0 rgb(255, 51, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    font: 1.25rem monospace;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    background-color: #ffffff00;
+    height: 60px;
+}
+
+.reset:active {
+    box-shadow: 2px 2px 5px 0 rgb(0, 166, 255), inset 2px 2px 5px 0 rgb(3, 111, 252);   
+}
+
+[type="number"] {
+    height: 60px;
+    width: 60px;
+    box-shadow: -2px -2px 5px 0 rgb(255, 128, 0), inset -2px -2px 5px 0 rgb(255, 51, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    font: 24px sans-serif;
+    transition: 0.3s;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    background-color: #ffffff00;
+}
+
+[type="number"]:active {
+    box-shadow: 2px 2px 5px 0 rgb(0, 166, 255), inset 2px 2px 5px 0 rgb(3, 111, 252);
+}
+
+label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: monospace;
+}
+
+[type="checkbox"] {
+    display: none;
+}
+
+[type="checkbox"]:checked+label::after {
+    transform: translateX(30px);
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font: 20px monospace;
+}
+
+.slide>label  {
+    cursor: pointer;
+}
+
+.type>input {
+    display: none;
+}
+
+.type::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 20px;
+    background-color: #0008;
+    /* background-color: #ffffff00; */
+    /* box-shadow: -2px -2px 5px 0 rgb(255, 128, 0), inset -2px -2px 5px 0 rgb(255, 51, 0); */
+    border-radius: 10px;
+}
+
+.type::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform .3s;
+}

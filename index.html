@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div class="stats">
+        <h3>Статистика игры</h3>
+        <div class="stats-box"></div>
+    </div>
+    <main>  
+        <h1>Крестики - нолики</h1>
+        <div class="board"></div>
+    </main>
+    <div class="control">
+        <label>Размер поля <input type="number" min="3" max="10" value="3"></label>
+        <button class="reset">Начать новую игру</button>
+        <div class="slide">
+            <label for="type">PvE</label>
+            <input type="checkbox" id="type">
+            <label for="type" class="type">PvP</label>
+        </div>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
